@@ -1,20 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import store from './store' // imported for you already
+import store, { increment } from './store'
 
 class Counter extends React.Component {
   constructor () {
     super()
-    this.state = {
-      count: 0
-    }
+    this.state = { count: 0 }
     this.increment = this.increment.bind(this)
   }
 
   increment () {
-    this.setState({
-      count: this.state.count + 1
-    })
+    this.setState({ count: this.state.count + 1 })
   }
 
   render () {
@@ -29,7 +25,4 @@ class Counter extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Counter />,
-  document.getElementById('app')
-)
+ReactDOM.render( <Counter />, document.getElementById('app'))
