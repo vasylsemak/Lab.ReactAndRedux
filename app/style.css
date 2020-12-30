@@ -31,15 +31,15 @@ body {
 }
 
 #counter button {
-  padding: 2em 4em;
-  background-color: #59A9C2;
+  padding: 1rem 2.5rem;
+  background-color: #59a9c2;
   color: white;
   border: none;
-  font-size: 1em;
+  font-size: 3rem;
   transition: all 1s ease;
   outline: none;
 }
 
 #counter button:hover {
-  background-color: #00AAAA;
+  background-color: #00aaaa;
 }
