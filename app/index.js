@@ -5,12 +5,21 @@ import store, { increment } from './store'
 class Counter extends React.Component {
   constructor () {
     super()
-    this.state = { count: 0 }
+    this.state = store.getState()
     this.increment = this.increment.bind(this)
   }
 
   increment () {
-    this.setState({ count: this.state.count + 1 })
+    store.dispatch(increment())
+  }
+
+  componentDidMount () {
+    const unsubscribeCB = store.subscribe(() => this.setState(store.getState()))
+    this.unsubscribe = unsubscribeCB
+  }
+
+  componentWillUnmount () {
+    this.unsubscribe()
   }
 
   render () {
